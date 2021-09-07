@@ -9,7 +9,8 @@ app.use(express.json())
 app.use(cors())
 
 app.post('/data', (req, res) => {
-    axios.get(`http://www.metaweather.com/api/location/search?lattlong=${req.body.lattlong}`)
+  console.log(req.body)
+  axios.get(`http://www.metaweather.com/api/location/search?lattlong=${req.body.lattlong}`)
   .then(function (response) {
     // handle success
     res.json(response.data)
@@ -24,4 +25,5 @@ app.post('/data', (req, res) => {
   })
 
   });
-  app.listen(3000, () => console.log('Listening on port 3000.'));
+  const PORT = process.env.PORT || 8080;
+  app.listen(PORT, () => console.log('Listening on port 8080.'));
