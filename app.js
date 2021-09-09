@@ -20,7 +20,7 @@ app.post('/lattlong', (req, res) => {
     console.log(error);
     res.status(500)
     res.json({
-        'error': "metaweather api error"
+        'error': "metaweather api error lattlong"
     })
   })
 
@@ -38,7 +38,7 @@ app.post('/lattlong', (req, res) => {
       console.log(error);
       res.status(500)
       res.json({
-          'error': "metaweather api error"
+          'error': "metaweather api error query"
       })
     })
   
@@ -56,7 +56,7 @@ app.post('/lattlong', (req, res) => {
         console.log(error);
         res.status(500)
         res.json({
-            'error': "metaweather api error"
+            'error': "metaweather api error woeid"
         })
       })
     
