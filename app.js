@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(cors())
 
 app.post('/lattlong', (req, res) => {
-  console.log(req.body)
+  // console.log(req.body)
   axios.get(`http://www.metaweather.com/api/location/search?lattlong=${req.body.lattlong}`)
   .then(function (response) {
     // handle success
@@ -30,6 +30,7 @@ app.post('/lattlong', (req, res) => {
     console.log(req.body)
     axios.get(`http://www.metaweather.com/api/location/search?query=${req.body.query}`)
     .then(function (response) {
+      console.log("response.data", response.data);
       // handle success
       res.json(response.data)
     })
@@ -46,9 +47,10 @@ app.post('/lattlong', (req, res) => {
 
     app.post('/woeid', (req, res) => {
       console.log(req.body)
-      axios.get(`http://www.metaweather.com/api/location/woeid/${req.body.woeid}`)
+      axios.get(`http://www.metaweather.com/api/location/${req.body.woed}/`)
       .then(function (response) {
         // handle success
+        console.log("response.data", response.data);
         res.json(response.data)
       })
       .catch(function (error) {
